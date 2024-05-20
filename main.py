@@ -9,7 +9,8 @@ Each course has a school, name & description. The description is read by AI agen
 """ 
 
 app = FastAPI(
-    title="Steampunk AI API"
+    title="Steampunk AI API",
+    description=APP_DESCRIPTION
 )
 
 class Course(BaseModel):
