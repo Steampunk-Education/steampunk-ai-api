@@ -1,7 +1,16 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, RootModel
 
-app = FastAPI()
+APP_DESCRIPTION = """
+Course information can be searched via the Steampunk AI API. 
+
+## Courses
+Each course has a school, name & description. The description is read by AI agents to answer student's questions.
+""" 
+
+app = FastAPI(
+    title="Steampunk AI API"
+)
 
 class Course(BaseModel):
     course_id: str
