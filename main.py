@@ -3,8 +3,6 @@ from pydantic import BaseModel, RootModel
 from mailersend import emails
 
 APP_DESCRIPTION = """
-Course information can be searched via the Steampunk AI API. 
-
 ## Email automation
 The /email endpoint takes five inputs: `name`, `center`, `range`, `theme`, `email`<br>
 `name`: Name of the education center<br>
@@ -35,7 +33,7 @@ reply_to = {
 }
 
 @app.get("/email/")
-def get_courses(name: str, center: str, range: str, theme: str, email: str):
+def send_email(name: str, center: str, range: str, theme: str, email: str):
     recipients = [
         {
             "name": "Gabe Braden",
