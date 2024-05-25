@@ -67,4 +67,4 @@ def get_courses(name: str, center: str, range: str, theme: str, email: str):
     mailer.set_html_content(html_file, mail_body)
     mailer.set_reply_to(reply_to, mail_body)
 
-    print(mailer.send(mail_body))
+    return { "status": "Success! The email has been sent." }
