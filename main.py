@@ -43,17 +43,14 @@ def send_email(name: str, center: str, range: str, theme: str, email: str):
 
     # TODO: If you have time, use AI to suggest the workshop
     # TODO: Include the reason why in the HTML doc - Jinja templating? 
-
     file_name = "sumo"
-    if center.lower() == "homeschool":
-        file_name = "mars-rover"
-    elif center.lower() == "library":
-        file_name = "vr"
 
-    if theme.lower() == "robotics":
-        file_name = "sumo"
-    if theme.lower() == "vr":
+    if "vr" in theme.lower():
         file_name = "vr"
+    if "sumo" in theme.lower():
+        file_name = "sumo"
+    if "mars" in theme.lower():
+        file_name = "mars-rover"
 
     html_file = ""
     with open(f"html-templates/{file_name}.html") as f:
